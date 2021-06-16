@@ -15,6 +15,7 @@
 
 from selenium.webdriver import *
 from typing import Type, Union
+from WebTest.common.setting import *
 
 
 class BrowserTypeError(Exception):
@@ -27,12 +28,12 @@ class BrowserTypeError(Exception):
 
 class BROWSER:
 
-    CHROME_DRIVER_PATH = "../dirvers/chrome_driver.exe"
+    CHROME_DRIVER_PATH = CHROME_DRIVER_PATH
     # 使用32位ie驱动解决文本输入缓慢的问题
-    IE_DRIVER_PATH = "../drivers/IEDriverServer_32.exe"
-    FIREFOX_DRIVER_PATH = "../drivers/gecko_driver.exe"
-    EDGE_DRIVER_PATH = "../drivers/edge_driver.exe"
-    OPERA_DRIVER_PATH = "../drivers/opera_driver.exe"
+    IE_DRIVER_PATH = IE_DRIVER_PATH
+    FIREFOX_DRIVER_PATH = FIREFOX_DRIVER_PATH
+    EDGE_DRIVER_PATH = EDGE_DRIVER_PATH
+    OPERA_DRIVER_PATH = OPERA_DRIVER_PATH
 
     WINDOWS_SIZE = (1024,900)
     IMP_TIME = 30 #
@@ -65,7 +66,7 @@ class BROWSER:
         浏览器特定的操作，在子类中实现
         :return:
         """
-        pass
+        return
 
     @property
     def browser(self):
@@ -73,7 +74,7 @@ class BROWSER:
         启动浏览器，返回浏览器实例
         :return:
         """
-        pass
+        return
 
 
 class CHROME(BROWSER):
